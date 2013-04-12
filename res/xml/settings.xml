@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:defaultValue="@string/SettingActivity_defauleroot"
+        android:dialogTitle="@string/SettingActivity_rooturl"
+        android:key="root_url"
+        android:summary="@string/SettingActivity_tap2edit"
+        android:title="@string/SettingActivity_rooturl" />
+
+    <ListPreference
+        android:dialogTitle="请选择默认编码"
+        android:entries="@array/preference_encoding_entries"
+        android:entryValues="@array/preference_encoding_entriesvalue"
+        android:key="encode"
+        android:summary="编码格式"
+        android:title="默认编码" />
+
+</PreferenceScreen>

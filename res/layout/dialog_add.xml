@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/tv_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/autoet_key"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/tv_value"
+            android:text="@string/tv_key" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoet_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_key"
+            android:ems="10"
+            android:hint="@string/et_key_hint" >
+
+            <requestFocus />
+        </AutoCompleteTextView>
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/autoet_value"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/autoet_key"
+            android:text="@string/tv_contain" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoet_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/autoet_key"
+            android:layout_below="@+id/autoet_key"
+            android:ems="10"
+            android:hint="@string/et_contain_hint" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_02"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_01"
+        android:layout_centerHorizontal="true" >
+
+        <Button
+            android:id="@+id/bt_dialog_drop"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_drop" />
+
+        <Button
+            android:id="@+id/bt_dialog_add"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_add" />
+    </LinearLayout>
+
+</RelativeLayout>

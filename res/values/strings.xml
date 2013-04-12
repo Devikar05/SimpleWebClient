@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SimpleWebClient</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- mainactivity -->
+    <string name="tv_url">url: </string>
+    <string name="et_url">输入url(不包含根地址)</string>
+    <string name="tv_key">key: </string>
+    <string name="tv_contain">value: </string>
+    <string name="tv_s_value">添加参数</string>
+    <string name="tv_s_head">添加请求头</string>
+    <string name="et_contain_hint">输入参数</string>
+    <string name="et_key_hint">输入key</string>
+    <string name="bt_add">添加</string>
+    <string name="bt_post">POST</string>
+    <string name="bt_get">GET</string>
+    <string name="bt_clearb">CLEAR</string>
+    <string name="bt_clear">清除历史记录</string>
+    <string name="bt_drop">取消</string>
+    <!-- actionbar -->
+    <string name="frag_send">发起请求</string>
+    <string name="frag_history">历史记录</string>
+    <string name="frag_compile">编辑参数</string>
+    <string name="frag_detail">详细参数</string>
+    <!-- fragment_detail -->
+    <string name="bt_add_head">head</string>
+    <string name="bt_add_param">param</string>
+    <string-array name="http_head_key">
+        <item>Accept</item>
+        <item>Accept-Charset</item>
+        <item>Accept-Encoding</item>
+        <item>Accept-Language</item>
+        <item>Authorization</item>
+        <item>Connection</item>
+        <item>Content-Length</item>
+        <item>Cookie</item>
+        <item>From</item>
+        <item>Host</item>
+        <item>If-Modified-Since</item>
+        <item>Pragma</item>
+        <item>Referer</item>
+        <item>User-Agent</item>
+        <item>UA-Pixels</item>
+        <item>UA-Color</item>
+        <item>UA-OS</item>
+        <item>UA-CPU</item>      
+    </string-array>
+
+    <!-- SettingActivity -->
+    <string name="SettingActivity_defauleroot">http://192.168.1.101:8080</string>
+    <string name="SettingActivity_rooturl">根目录设置</string>
+    <string name="SettingActivity_tap2edit">点击输入</string>
+    <string name="SettingActivity_"></string>
+
+    <string-array name="entries_list_preference">
+        <item>www.anddev.org</item>
+        <item>www.eoeandroid.com</item>
+        <item>developer.android.com</item>
+    </string-array>
+    <string-array name="entriesvalue_list_preference">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="preference_encoding_entries">
+        <item>UTF-8</item>
+        <item>GBK</item>
+    </string-array>
+    <string-array name="preference_encoding_entriesvalue">
+        <item>UTF-8</item>
+        <item>GBK</item>
+    </string-array>
+
+</resources>

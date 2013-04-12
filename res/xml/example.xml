@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:defaultValue="http://192.168.1.101:8080"
+        android:dialogTitle="根目录设置"
+        android:key="root_url"
+        android:summary="点击输入"
+        android:title="根目录设置" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="autoLogin"
+        android:summaryOff="关闭"
+        android:summaryOn="开启"
+        android:title="自动登录" />
+
+    <PreferenceCategory android:title="呵呵" >
+        <ListPreference
+            android:dialogTitle="选择固定列"
+            android:entries="@array/entries_list_preference"
+            android:entryValues="@array/entriesvalue_list_preference"
+            android:key="list0"
+            android:summary="选择固定列"
+            android:title="选择固定列" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="呵呵" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="smsSilence"
+            android:summaryOff="关闭"
+            android:summaryOn="开启"
+            android:title="呵呵" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="其他选项" >
+        <RingtonePreference
+            android:key="rt1"
+            android:summary="选择铃声"
+            android:title="RingtonePreference Sample" />
+    </PreferenceCategory>
+
+    <PreferenceScreen android:title="更多选项" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="cb21"
+            android:summaryOff="关闭"
+            android:summaryOn="开启"
+            android:title="功能1" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="cb22"
+            android:summaryOff="停用"
+            android:summaryOn="使用"
+            android:title="功能2" />
+
+        <ListPreference
+            android:dialogTitle="请选择论坛"
+            android:entries="@array/entries_list_preference"
+            android:entryValues="@array/entriesvalue_list_preference"
+            android:key="list1"
+            android:summary="开发论坛"
+            android:title="android forum" />
+    </PreferenceScreen>
+
+</PreferenceScreen>
