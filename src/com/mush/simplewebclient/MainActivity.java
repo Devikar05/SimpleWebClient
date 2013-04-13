@@ -40,9 +40,9 @@ public class MainActivity extends Activity {
 	public static final int DIALOG_ADDPARAM = 2;
 
 	private DetialFragment detialFragment;
-	private CompileFragment compileFragment;
+	//private CompileFragment compileFragment;
 	private HistoryFragment historyFragment;
-	private SendFragment sendFragment;
+	//private SendFragment sendFragment;
 
 	public List<ItemBean> data;
 	public HTTPController httpController;
@@ -63,12 +63,8 @@ public class MainActivity extends Activity {
 
 		detialFragment = (DetialFragment) Fragment.instantiate(this,
 				DetialFragment.class.getName());
-		compileFragment = (CompileFragment) Fragment.instantiate(this,
-				CompileFragment.class.getName());
 		historyFragment = (HistoryFragment) Fragment.instantiate(this,
 				HistoryFragment.class.getName());
-		sendFragment = (SendFragment) Fragment.instantiate(this,
-				SendFragment.class.getName());
 
 		ab = getActionBar();
 		setListNavigation(ab);
@@ -241,6 +237,7 @@ public class MainActivity extends Activity {
 					item.setItemType(ItemBean.ITEM_TYPE_2);
 					item.setData((Map<String,String>) msg.obj);
 					activity.data.add(item);
+					activity.detialFragment.mAdapter.notifyDataSetChanged();
 				}
 				break;
 			}
@@ -259,6 +256,7 @@ public class MainActivity extends Activity {
 					item.setItemType(ItemBean.ITEM_TYPE_1);
 					item.setMessage((String) msg.obj);
 					activity.data.add(item);
+					activity.detialFragment.mAdapter.notifyDataSetChanged();
 				}
 				break;
 			}
@@ -276,19 +274,10 @@ public class MainActivity extends Activity {
 		final List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
 
 		Map<String, Object> map = new HashMap<String, Object>();
-		// 添加“发起请求”
-		map.put("title", getString(R.string.frag_send));
-		map.put("fragment", sendFragment);
-		data.add(map);
 		// 添加“详细参数”
 		map = new HashMap<String, Object>();
 		map.put("title", getString(R.string.frag_detail));
 		map.put("fragment", detialFragment);
-		data.add(map);
-		// 添加“编辑参数”
-		map = new HashMap<String, Object>();
-		map.put("title", getString(R.string.frag_compile));
-		map.put("fragment", compileFragment);
 		data.add(map);
 		// 添加“历史记录”
 		map = new HashMap<String, Object>();

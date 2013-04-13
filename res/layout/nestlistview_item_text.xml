@@ -8,11 +8,13 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textIsSelectable="false"/>
 
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textIsSelectable="false" />
 
 </LinearLayout>

@@ -25,8 +25,13 @@ public class NestListAdapter extends BaseAdapter {
 	private static final String tag = "HolderAdapter";
 	/**
 	 * ListView 中视图的种类个数
+	 * 必须准确指定这个值，并覆盖超类的getViewTypeCount()和getItemViewType（）方法
+	 * 否则不能正常加载不同的View
 	 */
-	private final int MEX_ITEM_TYPE = 4;
+	private final int MEX_ITEM_TYPE = 4;	
+	/**
+	 * 父容器上下文
+	 */
 	private Context mContext;
 	/**
 	 * List中的数据
@@ -47,12 +52,19 @@ public class NestListAdapter extends BaseAdapter {
 		this.data = new ArrayList<ItemBean>();
 	}
 
+	/* （非 Javadoc）
+	 * @see android.widget.Adapter#getCount()
+	 */
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return this.data.size();
 	}
 
+	/* 
+	 * （非 Javadoc）
+	 * @see android.widget.BaseAdapter#getItemViewType(int)
+	 */
 	@Override
 	public int getItemViewType(int position) {
 		int type = super.getItemViewType(position);
@@ -75,6 +87,9 @@ public class NestListAdapter extends BaseAdapter {
 		return 0;
 	}
 
+	/* （非 Javadoc）
+	 * @see android.widget.BaseAdapter#getViewTypeCount()
+	 */
 	@Override
 	public int getViewTypeCount() {
 		return MEX_ITEM_TYPE;
@@ -90,6 +105,7 @@ public class NestListAdapter extends BaseAdapter {
 	public void setDataSource(List<ItemBean> data) {
 		Log.d("setDataSource", "Size: " + data.size());
 		this.data = data;
+		this.notifyDataSetChanged();
 	}
 
 	/**
@@ -99,6 +115,9 @@ public class NestListAdapter extends BaseAdapter {
 		this.data.clear();
 	}
 
+	/* （非 Javadoc）
+	 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parentView) {
 		Log.d(tag + "getView", "position:" + position);
@@ -109,13 +128,11 @@ public class NestListAdapter extends BaseAdapter {
 		if (convertView == null) {
 			switch (type) {
 			case ItemBean.ITEM_TYPE_0: {
-
 			}
 			case ItemBean.ITEM_TYPE_2: {
-
 			}
 			case ItemBean.ITEM_TYPE_3: {
-				convertView = mInflater.inflate(R.layout.nestlistview_item,
+				convertView = mInflater.inflate(R.layout.nestlistview_item_list,
 						null);
 				holder = new ViewHolder();
 
@@ -146,7 +163,7 @@ public class NestListAdapter extends BaseAdapter {
 
 		if (type != ItemBean.ITEM_TYPE_1) {
 			twoItemAdapter = new TwoItemAdapter(this.mContext,
-					R.layout.two_txt_item);
+					R.layout.nestlistview_item_twotxt);
 			Map<String, String> map = data.getData();
 			Set<Entry<String, String>> entrys = map.entrySet();
 			for (Map.Entry<String, String> entry : entrys) {

@@ -7,21 +7,21 @@ public class ItemBean {
 	 * 请求头
 	 */
 	public static final int ITEM_TYPE_0 = 0;
-	
-	/**
-	 *只有一个TextView
-	 */
-	public static final int ITEM_TYPE_1 = 1;
-	/**
-	 * 相应头
-	 */
-	public static final int ITEM_TYPE_2 = 2;
 	/**
 	 * 请求参数
 	 */
 	public static final int ITEM_TYPE_3 = 3;
-	public static final int ITEM_TYPE_4 = 4;
-	public static final int ITEM_TYPE_5 = 5;
+	/**
+	 * 响应头
+	 */
+	public static final int ITEM_TYPE_2 = 2;
+	
+	/**
+	 *响应参数
+	 */
+	public static final int ITEM_TYPE_1 = 1;
+
+
 
 	private int itemType;
 	private Map<String, String> data;

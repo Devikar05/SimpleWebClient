@@ -51,7 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_btn"
         android:layout_centerHorizontal="true"
-        android:cacheColorHint="@android:color/transparent" >
+        android:cacheColorHint="@android:color/transparent" 
+        android:divider="#2F4F4F"
+        android:dividerHeight="10dp">
     </ListView>
 
 </RelativeLayout>

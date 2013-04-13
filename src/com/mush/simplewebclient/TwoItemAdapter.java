@@ -23,10 +23,12 @@ public class TwoItemAdapter extends BaseAdapter {
 		this.list = new ArrayList<String[]>();
 	}
 	
+	
 	public void addItem(String[] item){
 		this.list.add(item);
 	}
 
+	@Override
 	public int getCount() {
 		// TODO 自动生成的方法存根
 		return list.size();
@@ -41,11 +43,13 @@ public class TwoItemAdapter extends BaseAdapter {
 		this.list.clear();
 	}
 
+	@Override
 	public long getItemId(int position) {
 		// TODO 自动生成的方法存根
 		return 0;
 	}
 
+	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO 自动生成的方法存根
 		ViewHolder holder = null;
@@ -61,7 +65,7 @@ public class TwoItemAdapter extends BaseAdapter {
 
 			holder = (ViewHolder) convertView.getTag();
 		}
-		//娴熟数据
+		//显示数据
 		String[] txt = this.list.get(position);
 		holder.txt1.setText(txt[0]);
 		holder.txt2.setText(txt[1]);

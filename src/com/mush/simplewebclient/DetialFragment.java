@@ -22,7 +22,7 @@ public class DetialFragment extends Fragment {
 	private View mView;
 	private Button btn_head, btn_param, btn_post, btn_get, btn_clean;
 	private ListView mListView;
-	private NestListAdapter mAdapter;
+	public NestListAdapter mAdapter;
 	//private Handler myHandler;
 
 	@Override

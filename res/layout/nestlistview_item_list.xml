@@ -8,8 +8,8 @@
         android:id="@+id/tv_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="HTTP Head"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textIsSelectable="false"/>
 
     <ListView
         android:id="@+id/lv_contain"

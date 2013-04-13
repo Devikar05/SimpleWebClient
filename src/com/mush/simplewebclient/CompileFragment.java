@@ -44,19 +44,6 @@ public class CompileFragment extends Fragment {
 		this.tv_show = (TextView) this.view.findViewById(R.id.tv_show);
 		
 		MainActivity parent = (MainActivity) this.getActivity();
-		/*
-		Bundle bundle = parent.get__onCompilingData();
-		if(bundle != null){
-			String url = bundle.getString("url");
-			this.et_url.setText(url);
-			String param = bundle.getString("param");
-			this.et_contain.setText(param);
-			
-			
-		}
-
-		this.webClient = parent.webClient;
-		this.handler = new MyHandler(this);*/
 		return this.view;
 		
 	}
