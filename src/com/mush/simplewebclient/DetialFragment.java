@@ -1,8 +1,6 @@
 package com.mush.simplewebclient;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -83,6 +81,8 @@ public class DetialFragment extends Fragment {
 				break;
 			}
 			case R.id.bt_clear: {
+				mAdapter.cleanAll();
+				mAdapter.notifyDataSetInvalidated();
 				break;
 			}
 

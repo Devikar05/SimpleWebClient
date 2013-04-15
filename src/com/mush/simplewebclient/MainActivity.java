@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -70,6 +71,7 @@ public class MainActivity extends Activity {
 		setListNavigation(ab);
 
 		this.data = new ArrayList<ItemBean>();
+		//this.data = new LinkedList<ItemBean>();
 	}
 
 	/* （非 Javadoc）
@@ -106,6 +108,7 @@ public class MainActivity extends Activity {
 									item.getData().put(
 											autoet_key.getText().toString(),
 											autoet_value.getText().toString());
+									detialFragment.mAdapter.notifyDataSetInvalidated();
 									add = false;
 								}
 							}
@@ -118,7 +121,14 @@ public class MainActivity extends Activity {
 								heads.put(autoet_key.getText().toString(),
 										autoet_value.getText().toString());
 								item.setData(heads);
-								data.add(item);
+								if(item.getItemType() == ItemBean.ITEM_TYPE_0){
+									data.add(0,item);
+									detialFragment.mAdapter.notifyDataSetInvalidated();
+								}else{
+									data.add(data.size()>0?1:0,item);
+									detialFragment.mAdapter.notifyDataSetInvalidated();
+								}
+								
 							}
 							autoet_key.setText(null);
 							autoet_value.setText(null);
@@ -236,7 +246,7 @@ public class MainActivity extends Activity {
 					ItemBean item = new ItemBean();
 					item.setItemType(ItemBean.ITEM_TYPE_2);
 					item.setData((Map<String,String>) msg.obj);
-					activity.data.add(item);
+					activity.data.add(activity.data.size()<=2?activity.data.size():2,item);
 					activity.detialFragment.mAdapter.notifyDataSetChanged();
 				}
 				break;
@@ -255,7 +265,7 @@ public class MainActivity extends Activity {
 					ItemBean item = new ItemBean();
 					item.setItemType(ItemBean.ITEM_TYPE_1);
 					item.setMessage((String) msg.obj);
-					activity.data.add(item);
+					activity.data.add(activity.data.size()<=3?activity.data.size():3,item);
 					activity.detialFragment.mAdapter.notifyDataSetChanged();
 				}
 				break;
