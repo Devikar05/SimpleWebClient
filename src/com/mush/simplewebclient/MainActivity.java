@@ -2,6 +2,7 @@ package com.mush.simplewebclient;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -123,9 +124,11 @@ public class MainActivity extends Activity {
 								item.setData(heads);
 								if(item.getItemType() == ItemBean.ITEM_TYPE_0){
 									data.add(0,item);
+									Collections.sort(data);
 									detialFragment.mAdapter.notifyDataSetInvalidated();
 								}else{
-									data.add(data.size()>0?1:0,item);
+									data.add(data.size()>1?0:0,item);
+									Collections.sort(data);
 									detialFragment.mAdapter.notifyDataSetInvalidated();
 								}
 								
