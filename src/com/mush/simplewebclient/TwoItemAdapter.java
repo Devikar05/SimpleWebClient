@@ -1,6 +1,5 @@
 ﻿package com.mush.simplewebclient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -20,12 +19,18 @@ public class TwoItemAdapter extends BaseAdapter {
 	public TwoItemAdapter(Context context, int rowLayout){
 		this.mRowLayout = rowLayout;
 		this.mInflater = LayoutInflater.from(context);
-		this.list = new ArrayList<String[]>();
 	}
 	
 	
 	public void addItem(String[] item){
 		this.list.add(item);
+		this.notifyDataSetInvalidated();
+	}
+	
+	public void setDataSource(List<String []> list){
+		this.list = list;
+		this.notifyDataSetInvalidated();
+		
 	}
 
 	@Override

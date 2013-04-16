@@ -49,7 +49,7 @@ public class NestListAdapter extends BaseAdapter {
 	public NestListAdapter(Context context) {
 		this.mContext = context;
 		this.mInflater = LayoutInflater.from(context);
-		this.data = new ArrayList<ItemBean>();
+		//this.data = new ArrayList<ItemBean>();
 	}
 
 	/* （非 Javadoc）
@@ -113,6 +113,7 @@ public class NestListAdapter extends BaseAdapter {
 	 */
 	public void cleanAll() {
 		this.data.clear();
+		this.notifyDataSetInvalidated();
 	}
 
 	/* （非 Javadoc）
@@ -164,17 +165,18 @@ public class NestListAdapter extends BaseAdapter {
 		if (type != ItemBean.ITEM_TYPE_1) {
 			twoItemAdapter = new TwoItemAdapter(this.mContext,
 					R.layout.nestlistview_item_twotxt);
+			List<String[]> list = new ArrayList<String[]>();
 			Map<String, String> map = data.getData();
 			Set<Entry<String, String>> entrys = map.entrySet();
 			for (Map.Entry<String, String> entry : entrys) {
 				String[] temp = new String[2];
 				temp[0] = entry.getKey();
 				temp[1] = entry.getValue();
-				twoItemAdapter.addItem(temp);
+				list.add(temp);
 			}
+			twoItemAdapter.setDataSource(list);
 			holder.lv_contain.setAdapter(twoItemAdapter);
 			holder.lv_contain.setOnItemClickListener(new OnItemClickListener(){
-
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
